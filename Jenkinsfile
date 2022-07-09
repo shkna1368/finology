@@ -1,8 +1,37 @@
-node {
-  stage ('Build') {
-    git url: 'https://github.com/shkna1368/finology.git'
-    withMaven {
-      bat "mvn clean verify"
-    } // withMaven will discover the generated Maven artifacts, JUnit Surefire & FailSafe reports and FindBugs reports
-  }
-}
+pipeline {
+    agent any 
+    stages {
+        
+        
+        
+        
+        stage('Build') { 
+            steps {
+                echo "start"
+                // 
+            }
+        }
+        
+         stage('Checkout external proj') {
+        steps {
+            git branch: 'main',
+               
+                url: 'https://github.com/shkna1368/finology/'
+
+          
+        }
+    }
+        
+        
+        stage('CLEAN-PACHAGE') { 
+            steps {
+               bat "mvn clean package"
+            }
+        }
+        stage('RUN') { 
+            steps {
+               bat "java -jar C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\pipline-test@2\\target\\car-1.0-SNAPSHOT.jar"
+               echo "end"
+            }
+        }
+    }
