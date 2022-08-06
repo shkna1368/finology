@@ -3,7 +3,7 @@ server:
 
 spring:
     datasource:
-       url: jdbc:postgresql://localhost:5432/finology_car
+       url: jdbc:postgresql://20.30.40.226:5432/finology_car
        username: postgres
        password: Shkna1368
 
