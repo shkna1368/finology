@@ -1,0 +1,16 @@
+server:
+  port: 8090
+
+spring:
+    datasource:
+
+       url: jdbc:postgresql://localhost:5432/finology_car
+       username: postgres
+       password: postgres
+
+
+    jpa:
+      database-platform: org.hibernate.dialect.PostgreSQLDialect
+      database: POSTGRESQL
+      hibernate:
+       ddl-auto: create-drop
